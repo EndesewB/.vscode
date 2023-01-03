@@ -1,0 +1,33 @@
+#include <stdio.h>
+unsigned int _strspn(char *s, char *accept);
+int main(void)
+{
+    char *s = "hello, world";
+    char *f = "oleh";
+    unsigned int n;
+
+    n = _strspn(s, f);
+    printf("%u\n", n);
+    return (0);
+}
+unsigned int _strspn(char *s, char *accept)
+{
+    unsigned int co1, co2;
+    
+    for (co1=0; s[co1]!='\0'; co1++)
+    {
+        for(co2=0; accept[co2]!='\0'; co2++)
+        {
+            if(s[co1]==accept[co2])
+            {
+                break;
+            }
+        }
+            if(accept[co2]=='\0')
+            {
+                break;
+            }
+        
+    }
+    return(co1);
+}
